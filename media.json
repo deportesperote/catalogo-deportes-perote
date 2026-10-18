@@ -912,12 +912,6 @@
   ],
   "videos": []
  },
- "MS500": {
-  "images": [
-   "media/MS500-c1.webp"
-  ],
-  "videos": []
- },
  "MS500NCAA": {
   "images": [
    "media/MS500NCAA-c1.webp"
@@ -1311,6 +1305,18 @@
  "XJUMPN": {
   "images": [
    "media/XJUMPN-c1.webp"
+  ],
+  "videos": []
+ },
+ "p0616": {
+  "images": [
+   "media/p0616-c1.webp"
+  ],
+  "videos": []
+ },
+ "p0617": {
+  "images": [
+   "media/p0617-c1.webp"
   ],
   "videos": []
  }
