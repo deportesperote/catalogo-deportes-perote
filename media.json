@@ -67,7 +67,13 @@
   "images": [
    "media/84790Z-1.webp"
   ],
-  "videos": []
+  "videos": [
+   {
+    "src": "media/84790Z-2.mp4",
+    "poster": "media/84790Z-2.jpg",
+    "title": "Balón Básquet Basic en video"
+   }
+  ]
  },
  "IK5723": {
   "images": [
