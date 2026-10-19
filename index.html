@@ -18,31 +18,71 @@
 <meta name="twitter:description" content="Artículos deportivos y uniformes para equipos en Perote, Veracruz.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SportingGoodsStore","name":"Deportes Perote","address":{"@type":"PostalAddress","addressLocality":"Perote","addressRegion":"Veracruz","addressCountry":"MX"},"telephone":"+52 282 107 3249","openingHours":"Mo-Su 10:00-20:30"}</script>
 </head>
 <body>
-<header class="top">
-  <div class="brand"><span class="b1">DEPORTES</span> <span class="b2">PEROTE</span></div>
-  <button class="cartbtn" id="cartBtn" aria-label="Ver pedido">🛒 <span id="cartCount">0</span></button>
+<header class="top" id="top">
+  <div class="toprow">
+    <a class="brand" href="#" id="homeLink" aria-label="Deportes Perote — inicio"><span class="b1">DEPORTES</span><span class="b2">PEROTE</span></a>
+    <button class="cartbtn" id="cartBtn" aria-label="Ver pedido"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM5.2 4l.4 2H21l-2.2 8.2a2 2 0 0 1-1.9 1.5H8.3a2 2 0 0 1-2-1.6L4.4 4H2V2h3.6l.4 2z"/></svg><span id="cartCount">0</span></button>
+  </div>
+  <div class="searchwrap"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 0 1 6.3 12.9l5.4 5.4-1.4 1.4-5.4-5.4A8 8 0 1 1 10 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/></svg><input id="q" type="search" placeholder="Buscar: balón, guante, uniforme, código…" autocomplete="off" aria-label="Buscar productos"></div>
 </header>
-<section class="hero">
-  <p class="info">📍 Perote, Veracruz · 🕙 10:00 a 20:30 · Facebook: Deportes Perote</p>
-  <div class="searchwrap"><input id="q" type="search" placeholder="Buscar: balón, guante, uniforme, código…" autocomplete="off" aria-label="Buscar productos"></div>
-  <div class="chips" id="chips" role="tablist"></div>
+<div class="infobar">📍 Perote, Veracruz · 🕙 10:00 a 20:30 · Facebook: Deportes Perote</div>
+
+<div id="home">
+  <section class="hero" id="hero" aria-roledescription="carrusel" aria-label="Promociones" hidden>
+    <div class="htrack" id="htrack"></div>
+    <div class="hdots" id="hdots"></div>
+  </section>
+
+  <section class="sec">
+    <h2 class="st"><span>Categorías</span></h2>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section class="sec" id="secOfertas" hidden>
+    <h2 class="st st-red"><span>Ofertas</span><button class="seeall" data-tag="Oferta">Ver todas</button></h2>
+    <div class="hs" id="rowOfertas"></div>
+  </section>
+  <section class="sec" id="secNuevos" hidden>
+    <h2 class="st st-green"><span>Lo más nuevo</span><button class="seeall" data-tag="Nuevo">Ver todo</button></h2>
+    <div class="hs" id="rowNuevos"></div>
+  </section>
+  <section class="sec" id="secTop" hidden>
+    <h2 class="st st-orange"><span>Más vendidos</span><button class="seeall" data-tag="Más vendido">Ver todos</button></h2>
+    <div class="hs" id="rowTop"></div>
+  </section>
+  <section class="sec" id="secDest" hidden>
+    <h2 class="st st-blue"><span>Destacados</span></h2>
+    <div class="hs" id="rowDest"></div>
+  </section>
+
+  <section class="promo">
+    <div class="promo-in">
+      <strong>Uniformes personalizados para equipos y escuelas</strong>
+      <span>Cotiza con nosotros: diseño, tallas y entrega.</span>
+      <a class="wabtn" id="uniformBtn" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+    </div>
+  </section>
+</div>
+
+<section class="catalog" id="catalogo">
+  <h2 class="st" id="catTitle"><span>Todo el catálogo</span></h2>
+  <div class="chips" id="chips" role="tablist" aria-label="Categorías"></div>
   <div class="tools"><span id="count"></span>
     <select id="sort" aria-label="Ordenar"><option value="">Orden: catálogo</option><option value="asc">Precio: menor a mayor</option><option value="desc">Precio: mayor a menor</option></select></div>
+  <main id="grid" class="grid" aria-live="polite"></main>
+  <div id="more" class="more"></div>
 </section>
-<main id="grid" class="grid" aria-live="polite"></main>
-<div id="more" class="more"></div>
-<section class="banner">
-  <strong>Uniformes personalizados para equipos y escuelas: cotiza con nosotros</strong>
-  <a class="wabtn" id="uniformBtn" target="_blank" rel="noopener">Cotizar por WhatsApp</a>
-</section>
+
 <footer class="foot">
-  <div class="brand"><span class="b1">DEPORTES</span> <span class="b2">PEROTE</span></div>
+  <div class="brand"><span class="b1">DEPORTES</span><span class="b2">PEROTE</span></div>
   <p>Perote, Veracruz · Horario: 10:00 a 20:30 h</p>
-  <p>Tel./WhatsApp: 282 107 3249 · Facebook: Deportes Perote</p>
+  <p>Tel./WhatsApp: <a id="footWa" target="_blank" rel="noopener">282 107 3249</a> · Facebook: Deportes Perote</p>
   <p class="legal">Precios sujetos a cambio sin previo aviso. Confirmamos existencias por WhatsApp. Precios en MXN; incluyen IVA excepto los marcados con “+ IVA”. Imágenes ilustrativas.</p>
 </footer>
 <a class="fab" id="fab" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 32 32" width="30" height="30"><path fill="#fff" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.7 3.7 0 0 0-1.1 2.7 6.4 6.4 0 0 0 1.3 3.4 14.6 14.6 0 0 0 5.6 4.9c2.1.9 2.9 1 3.9.8a3.3 3.3 0 0 0 2.2-1.5 2.7 2.7 0 0 0 .2-1.5c-.1-.2-.3-.3-.7-.4z"/></svg></a>

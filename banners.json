@@ -1,0 +1,50 @@
+{
+  "_instrucciones": "Banners del carrusel principal (3 a 5 recomendados). Campos: titulo, subtitulo, etiqueta (texto pequeño arriba, opcional), color y color2 (degradado de fondo), texto ('claro' u 'oscuro'), imagenes (1 o 2 rutas de foto), boton (texto del botón) y link. Formatos de link: 'cat:Nombre de categoría' · 'q:texto a buscar' · 'wa:mensaje para WhatsApp' · 'https://…'. Para ocultar un banner sin borrarlo pon \"activo\": false.",
+  "banners": [
+    {
+      "etiqueta": "Equipos y escuelas",
+      "titulo": "Uniformes personalizados",
+      "subtitulo": "Con nombre, número y escudo de tu equipo. Cotiza por WhatsApp.",
+      "color": "#D7192A", "color2": "#7A0A16", "texto": "claro",
+      "imagenes": ["img/p/p0684-900.webp", "img/p/p0692-900.webp"],
+      "boton": "Cotizar por WhatsApp",
+      "link": "wa:Hola Deportes Perote, quiero cotizar uniformes personalizados para mi equipo/escuela. Mi nombre es: "
+    },
+    {
+      "etiqueta": "Tacos · Multitacos · Tenis de liga",
+      "titulo": "Calzado Joma y Concord",
+      "subtitulo": "Encuentra tu modelo y tu talla.",
+      "color": "#0E9F4F", "color2": "#04512A", "texto": "claro",
+      "imagenes": ["img/p/p1580-900.webp", "img/p/p1524-900.webp"],
+      "boton": "Ver calzado",
+      "link": "cat:Calzado"
+    },
+    {
+      "etiqueta": "Fútbol · Básquet · Voleibol",
+      "titulo": "Balones oficiales",
+      "subtitulo": "Molten, Spalding, Voit y más marcas.",
+      "color": "#F97316", "color2": "#9A3412", "texto": "claro",
+      "imagenes": ["img/p/p0455-900.webp", "img/p/p0100-900.webp"],
+      "boton": "Ver balones",
+      "link": "q:balón"
+    },
+    {
+      "etiqueta": "Ligas y torneos",
+      "titulo": "Trofeos y medallas",
+      "subtitulo": "Premia a tu equipo, tu liga o tu escuela.",
+      "color": "#FACC15", "color2": "#CA8A04", "texto": "oscuro",
+      "imagenes": ["img/p/p1417-900.webp", "img/p/p1423-900.webp"],
+      "boton": "Ver trofeos",
+      "link": "cat:Trofeos y medallas"
+    },
+    {
+      "etiqueta": "Alberca",
+      "titulo": "Todo para natación",
+      "subtitulo": "Gorras, goggles, tablas y más.",
+      "color": "#06B6D4", "color2": "#155E75", "texto": "claro",
+      "imagenes": ["img/p/p1255-900.webp", "img/p/p1262-900.webp"],
+      "boton": "Ver natación",
+      "link": "cat:Natación"
+    }
+  ]
+}

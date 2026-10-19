@@ -1,0 +1,5 @@
+{
+  "_instrucciones": "Configura etiquetas y ofertas por CÓDIGO de producto (el que aparece como 'Cód.' en la tarjeta). Ejemplo: \"IT6383\": {\"etiqueta\": \"Oferta\", \"precio_oferta\": 399}. etiqueta puede ser \"Oferta\", \"Nuevo\", \"Más vendido\" u otro texto corto. precio_oferta es opcional: si lo pones (y es menor que el precio normal) se muestra el precio de oferta y el precio normal tachado; si no, solo se muestra la etiqueta. Si 'productos' está vacío, la sección Ofertas no aparece. 'destacados' es la lista (códigos o id pXXXX) del carrusel Destacados.",
+  "productos": {},
+  "destacados": ["JD8032", "B7G2000", "V5M2200-L", "102741063", "76927Z", "04901201", "N10S2510FG", "X12112", "002383-106", "IK5723", "84850", "BC7R", "IT6383", "F5C5000-CCC", "AGUS2404FG", "002468740"]
+}
