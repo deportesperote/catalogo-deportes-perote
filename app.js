@@ -59,7 +59,7 @@ function card(p){
   if(md.images.length)badge+='<span class="mb">+'+md.images.length+(md.images.length===1?' foto':' fotos')+'</span>';
   if(md.videos.length)badge+='<span class="mb vid" title="Tiene video">▶</span>';
   var t=tagOf(p),x=cs(p.c);d.setAttribute('style',cvar(p.c));
-  d.innerHTML='<div class="ph"><span class="cbadge'+(x.dk?' dk':'')+'">'+esc(p.s&&p.s!==p.c&&p.s.length<22?p.s:p.c)+'</span>'+(t&&t.etiqueta?'<span class="sbadge t-'+slug(t.etiqueta)+'">'+esc(t.etiqueta)+'</span>':'')+(badge?'<span class="mbs">'+badge+'</span>':'')+(p.img?'<img alt="'+esc(p.n)+'" width="400" height="400" loading="lazy" decoding="async" sizes="(max-width:700px) 48vw, 260px" '+(io?'data-srcset':'srcset')+'="'+p.img+' 480w, '+big(p.img)+' 900w" '+(io?'data-src':'src')+'="'+p.img+'">':'')+'</div><div class="bd"><h3>'+esc(p.n)+'</h3>'+(meta.length?'<div class="meta">'+esc(meta[0])+'</div>':'')+(extra.length?'<div class="meta">'+esc(extra.join(' · '))+'</div>':'')+'<div class="pr"><span>'+(ep(p)<p.p?'<span class="was">Antes '+fmt(p.p)+'</span>':'')+'<span class="price">'+fmt(ep(p))+'</span>'+(p.iva?'<span class="iva">+ IVA</span>':'')+'</span><button class="add" aria-label="Agregar">+</button></div></div>';
+  d.innerHTML='<div class="ph"><span class="cbadge'+(x.dk?' dk':'')+'">'+esc(p.s&&p.s!==p.c&&p.s.length<22?p.s:p.c)+'</span>'+(t&&t.etiqueta?'<span class="sbadge t-'+slug(t.etiqueta)+'">'+esc(t.etiqueta)+'</span>':'')+(badge?'<span class="mbs">'+badge+'</span>':'')+(p.img?'<img alt="'+esc(p.n)+'" width="400" height="400" loading="lazy" decoding="async" sizes="(max-width:700px) 48vw, 260px" '+(io?'data-srcset':'srcset')+'="'+p.img+' 480w, '+big(p.img)+' 900w" '+(io?'data-src':'src')+'="'+p.img+'">':'')+'</div><div class="bd"><h3>'+esc(p.n)+'</h3>'+(meta.length?'<div class="meta">'+esc(meta[0])+'</div>':'')+(extra.length?'<div class="meta">'+esc(extra.join(' · '))+'</div>':'')+(p.m?'<div class="meta med">Medida: '+esc(p.m)+'</div>':'')+'<div class="pr"><span>'+(ep(p)<p.p?'<span class="was">Antes '+fmt(p.p)+'</span>':'')+'<span class="price">'+fmt(ep(p))+'</span>'+(p.iva?'<span class="iva">+ IVA</span>':'')+'</span><button class="add" aria-label="Agregar">+</button></div></div>';
   if(io&&p.img)io.observe(d.querySelector('img'));
   d.onclick=function(){openDetail(p.id)};d.onkeydown=function(e){if(e.key==='Enter')openDetail(p.id)};
   return d}
@@ -129,6 +129,7 @@ function openDetail(id){
   h+='<div class="dl"><b>Categoría:</b> '+esc(p.c)+(p.s!==p.c?' · '+esc(p.s):'')+'</div>';
   if(p.k.length)h+='<div class="dl"><b>Código:</b> '+esc(p.k.join(', '))+'</div>';
   if(p.d)h+='<div class="dl">'+esc(p.d)+'</div>';
+  if(p.m)h+='<div class="dl"><b>Medida:</b> '+esc(p.m)+'</div>';
   if(p.t.length)h+='<div class="dl"><b>Tallas/medidas:</b> '+esc(p.t.join(', '))+'</div>';
   if(p.co.length)h+='<div class="dl"><b>Colores:</b> '+esc(p.co.join(', '))+'</div>';
   h+='<div class="dprice">'+fmt(ep(p))+(ep(p)<p.p?'<span class="was">Antes '+fmt(p.p)+'</span>':'')+(p.iva?' <span class="iva">+ IVA</span>':'')+'</div>';

@@ -183,3 +183,4 @@ button{font-family:inherit;cursor:pointer}
   .tile b{font-size:18px}
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+.card .meta.med{font-weight:600;color:#0B1F44}
